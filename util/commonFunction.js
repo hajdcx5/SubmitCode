@@ -22,6 +22,17 @@ const setSubmitHistoryToLocalStorage = (data) => {
   console.log("setSubmitHistoryToLocalStorage");
 };
 
+const getSumtestFromLocalStorage = () => {
+  const sumtest = localStorage.getItem("Sumtest");
+  if (sumtest) return JSON.parse(sumtest);
+  return [];
+};
+
+const setSumtestToLocalStorage = (data) => {
+  localStorage.setItem("Sumtest", JSON.stringify(data));
+  console.log("setSumtestToLocalStorage");
+};
+
 let getStatus = (id, status_update_url, exerciseId) => {
   fetch(status_update_url, {
     headers: {
@@ -80,8 +91,9 @@ const updateStatus = (id, result) => {
     }
   }
   setStatusToLocalStorage(status);
-  setSubmitHistoryToLocalStorage(submitHistory); 
-  document.querySelector(`[id='${id}']`).innerHTML = result; 
+  setSubmitHistoryToLocalStorage(submitHistory);
+
+  document.querySelector(`[id='${id}']`).innerHTML = result;
 };
 
 // ..............

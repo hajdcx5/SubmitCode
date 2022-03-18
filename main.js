@@ -1,11 +1,6 @@
-const Sum = (data) => {
-  for (let x of data) {
-  x.SumSubmited = localStorage.getItem(`${x.title}`).length-1
-}}
-Sum(DATA)
 
 const render = (data) => {
-  let listEx = document.querySelector('.list-ex-wrapper')
+  let listEx = document.querySelector(".list-ex-wrapper");
   listEx.innerHTML = "";
   for (let x of data) {
     listEx.innerHTML += `
@@ -29,6 +24,12 @@ searchBar.onkeyup = () => {
   render(searchResult);
 };
 
-
-
-
+// const Sumtest = JSON.parse(localStorage.getItem("Sumtest"));
+// for (let x of Sumtest) {
+//   for (let y of DATA) {
+//     if (x.id == y.id) 
+//     {y.SumSubmited=x.count;
+//     console.log(y.SumSubmited);
+//     }
+//   }
+// }

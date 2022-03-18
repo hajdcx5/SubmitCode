@@ -52,7 +52,7 @@ let submitCode = () => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log("Submit Code :", data); // day la phat dau submit 
+      console.log("Submit Code :", data); // day la phat dau submit
       const statusURL = data.status_update_url;
       const id = new Date().getTime().toString();
       const status = getStatusFromLocalStorage();
@@ -60,8 +60,8 @@ let submitCode = () => {
       status.push({
         id,
         statusURL, // neu key trung voi value thi viet nhu nay
-        exerciseId : exercise.id
-      })
+        exerciseId: exercise.id,
+      });
       setStatusToLocalStorage(status);
       const submitHistory = getSubmitHistoryFromLocalStorage();
       submitHistory.push({
@@ -71,16 +71,32 @@ let submitCode = () => {
         language: "C/C++",
       });
       setSubmitHistoryToLocalStorage(submitHistory);
-      location.href = '/Htsr'
-      //
+      location.href = "/Htsr";
+
+      const Sumtest = getSumtestFromLocalStorage();
+      const ex = Sumtest.find((item) => item.id == exercise.id);
+      if (ex == undefined) {
+        Sumtest.push({
+          id: exercise.id,
+          count: 1,
+        });
+      } else {
+        for (let x of Sumtest) {
+          if (x.id == exercise.id) {
+            x.count++;
+            break;
+          }
+        }
+      }
+
+      setSumtestToLocalStorage(Sumtest);
     })
     .catch((error) => console.log(error));
 };
 document.querySelector("#submit-btn").onclick = () => {
   submitCode();
-  localStorage.setItem(`${exercise.title}`,localStorage.getItem(`${exercise.title}`)+1);
+  
 };
-
 
 // AC: Accepted (Kết quả đúng)
 
@@ -102,4 +118,3 @@ document.querySelector("#submit-btn").onclick = () => {
 // 1 0 0 1
 // 1 1 1 1 '
 //.............
-
