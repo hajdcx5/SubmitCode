@@ -40,7 +40,7 @@ let submitCode = () => {
   if (data.source == "") {
     alert("ngu");
     return 0;
-  } // do chua co source code
+  }
   // document.querySelector("#outputview").innerText = "Compiling.....";
   fetch("https://api.hackerearth.com/v4/partner/code-evaluation/submissions/", {
     method: "POST",
@@ -52,27 +52,27 @@ let submitCode = () => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log("Submit Code :", data); // day la pphat dau submit nhe
+      console.log("Submit Code :", data); // day la phat dau submit 
       const statusURL = data.status_update_url;
       const id = new Date().getTime().toString();
       const status = getStatusFromLocalStorage();
       status[id] = statusURL;
       status.push({
         id,
-        statusURL, // neu key trung voi value thi viet nhu nay cx dc
+        statusURL, // neu key trung voi value thi viet nhu nay
         exerciseId : exercise.id
       })
       setStatusToLocalStorage(status);
       const submitHistory = getSubmitHistoryFromLocalStorage();
       submitHistory.push({
         id: id,
-        name: exercise.title, // :)) :v
+        name: exercise.title, //
         output: null,
         language: "C/C++",
       });
       setSubmitHistoryToLocalStorage(submitHistory);
       location.href = '/Htsr'
-      // chỗ này có vẻ ổn r :v r h đi viết cái hàm cho render ra chỗ lich jswr
+      //
     })
     .catch((error) => console.log(error));
 };
@@ -101,4 +101,4 @@ document.querySelector("#submit-btn").onclick = () => {
 // 0 1 1 0
 // 1 0 0 1
 // 1 1 1 1 '
-// may cai cau tra loi chan qua
+

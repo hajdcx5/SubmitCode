@@ -1,4 +1,4 @@
-// cái thư mục này là nx cái gi dùng nh thì vứt zo :v
+//thư mục này là nx cái gi dùng nh thì vứt zo :v
 
 const getStatusFromLocalStorage = () => {
   const status = localStorage.getItem("status");
@@ -54,7 +54,7 @@ let getOutput = (outputUrl, id, exerciseId) => {
   fetch(outputUrl) // call xong r no tra minh 1 cai link ket qua , minh lay result tu link ket qua
     .then((res) => res.text())
     .then((data) => {
-      const exercise = DATA.find((item) => item.id == exerciseId); // e phai tim dc bai do trong mảng data để compare kết quả
+      const exercise = DATA.find((item) => item.id == exerciseId); //tim dc bai do trong mảng data để compare kết quả
       const output = data.split("\n").join("");
       const ACouput = exercise.out.replace(/\n/gm, "\r\n");
       console.log(output);
@@ -80,8 +80,7 @@ const updateStatus = (id, result) => {
     }
   }
   setStatusToLocalStorage(status);
-  setSubmitHistoryToLocalStorage(submitHistory); // co ve ok day, doc lai code sau nhe tai a bngu qua nen code 1 leof k giai thich
-  document.querySelector(`[id='${id}']`).innerHTML = result; // fix not doan nay la
+  setSubmitHistoryToLocalStorage(submitHistory); 
+  document.querySelector(`[id='${id}']`).innerHTML = result; 
 };
 
-// thoi  fix cai do sau, test not bai sai xem nhu nao ok anh 

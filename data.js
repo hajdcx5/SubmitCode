@@ -1,7 +1,6 @@
 const DATA = [
     {
-        // tam ví dụ 1 cái đi, mấy cái sau e chỉnh sau
-        id:'DAT0001',//nhớ là id luôn là cái duy nhất nhé, ngôn ngữ nào cx thế
+        id:'DAT0001',
         title: "Lập Trình Không Khó",
         level: "Dễ",
         SumSubmited: "0",
