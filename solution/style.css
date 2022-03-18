@@ -12,11 +12,15 @@
     tab-size: 4;
     resize: none !important;
     margin-top: 20px;
-    margin-left: 220px
+    margin-left: 227px
 }
 #wrapper-2{
-    margin-top: 100px;
+    margin-top: 90px;
     margin-left: 30px;
+    background-color: #ffffff;
+    width: 1465px;
+    border-radius: 6px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
 }
 .title {
     text-align: center;
@@ -63,6 +67,7 @@
 button {
     width: 100px;
     height: 30px;
+    border-radius: 5px;
     margin-left: 1200px;
     margin-top: 20px;
     margin-bottom: 20px;

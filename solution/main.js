@@ -16,7 +16,7 @@ console.log(id);
 const exercise = DATA.find((item) => item.id == id);
 console.log(exercise);
 
-document.getElementById("wrapper-2").innerHTML = `
+document.getElementById("wrapper-2").innerHTML = `<br>
 <div class="title">${exercise.title}</div>
 <div class="space"></div>   
 <div class="ch">Đề bài</div>
@@ -24,7 +24,7 @@ document.getElementById("wrapper-2").innerHTML = `
 <div class="ch">Dữ liệu vào</div>
 <div class="inp">${exercise.inpview}</div>
 <div class="ch">Dữ liệu ra</div>
-<div class="out">${exercise.outview}</div>
+<div class="out">${exercise.outview}</div> <br><br>
 `;
 
 // Compile
