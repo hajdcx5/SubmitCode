@@ -84,3 +84,4 @@ const updateStatus = (id, result) => {
   document.querySelector(`[id='${id}']`).innerHTML = result; 
 };
 
+// ..............

@@ -110,3 +110,4 @@ const DATA = [
         outview:"Danh sách các ước số nguyên dương của số nn theo thứ tự giảm dần, các số cách nhau bởi 1 dấu cách.",
     },
 ]
+// .concat................
