@@ -76,10 +76,11 @@ let submitCode = () => {
     })
     .catch((error) => console.log(error));
 };
-
 document.querySelector("#submit-btn").onclick = () => {
   submitCode();
+  localStorage.setItem(`${exercise.title}`,localStorage.getItem(`${exercise.title}`)+1);
 };
+
 
 // AC: Accepted (Kết quả đúng)
 
